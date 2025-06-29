@@ -14,9 +14,9 @@
 <div id="salida"></div>
 
 <py-script>
-    from js import document, console
+from js import document, console
 
-    def jugar(event):
+def jugar(event):
     console.log("👾 El juego empezó...")
     salida = document.getElementById("salida")
     salida.innerText = "El juego se ejecutó. Mirá la consola (F12)."
@@ -27,8 +27,9 @@
     console.error(f"❌ Error en el juego: {e}")
     salida.innerText += f"\nSe produjo un error: {e}"
 
-    # Enlazamos el evento del botón con la función
-    document.getElementById("btn-jugar").addEventListener("click", jugar)
+# Enlazamos el evento del botón con la función
+document.getElementById("btn-jugar").addEventListener("click", jugar)
 </py-script>
+
 </body>
 </html>
