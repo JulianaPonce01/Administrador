@@ -2,27 +2,33 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Juego prueba con PyScript</title>
+    <title>Juego PyScript</title>
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 <body>
 <h1>🎮 Juego PyScript</h1>
 <p>Presioná el botón para ejecutar el juego</p>
-<button onclick="jugar()">Jugar</button>
+
+<button id="btn-jugar">Jugar</button>
+<div id="salida"></div>
 
 <py-script>
-    from js import console
+    from js import document, console
 
-    def jugar():
+    def jugar(event):
     console.log("👾 El juego empezó...")
-    print("Esto también aparece en la consola de navegador (F12)")
+    salida = document.getElementById("salida")
+    salida.innerText = "El juego se ejecutó. Mirá la consola (F12)."
 
     try:
-    # Simulamos un error
-    resultado = 10 / 0
+    resultado = 10 / 0  # Error a propósito
     except Exception as e:
     console.error(f"❌ Error en el juego: {e}")
+    salida.innerText += f"\nSe produjo un error: {e}"
+
+    # Enlazamos el evento del botón con la función
+    document.getElementById("btn-jugar").addEventListener("click", jugar)
 </py-script>
 </body>
 </html>
