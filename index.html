@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Juego prueba con PyScript</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+<body>
+<h1>🎮 Juego PyScript</h1>
+<p>Presioná el botón para ejecutar el juego</p>
+<button onclick="jugar()">Jugar</button>
+
+<py-script>
+    from js import console
+
+    def jugar():
+    console.log("👾 El juego empezó...")
+    print("Esto también aparece en la consola de navegador (F12)")
+
+    try:
+    # Simulamos un error
+    resultado = 10 / 0
+    except Exception as e:
+    console.error(f"❌ Error en el juego: {e}")
+</py-script>
+</body>
+</html>
